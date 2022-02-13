@@ -1067,14 +1067,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $("#account_type").change(function () {
             var account_type = $("#account_type").val();
             if(account_type == 'personal'){
                 alert("personal selected");
             } else if(account_type == 'business'){
                 alert('Business selected');
-            } else {
-                alert("Please select account type");
             }
         });
         $(document).ready(function () {
