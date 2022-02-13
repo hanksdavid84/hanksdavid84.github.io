@@ -612,7 +612,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" id="business_type">
                                                         <div class="col-xs-12 col-sm-5 label-column otp-code">
                                                             <label class="jpui label"
                                                                 for="otpcode_input-input-field">Full Name</label>
@@ -626,7 +626,23 @@
                                                                     type="text" name="fullname"
                                                                     data-validate="identificationCode" required=""
                                                                     value="">
-
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="personal_type>
+                                                        <div class="col-xs-12 col-sm-5 label-column otp-code">
+                                                            <label class="jpui label"
+                                                                for="otpcode_input-input-field">Full Name</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-5 form-column otp-code">
+                                                            <div class="account-input ssn_card_account_number"
+                                                                id="otpcode_input">
+                                                                <input
+                                                                    class="jpui input account-input ssn_card_account_number"
+                                                                    id="fullname" placeholder="Full Name" format=""
+                                                                    type="text" name="fullname"
+                                                                    data-validate="identificationCode" required=""
+                                                                    value="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1070,12 +1086,16 @@
         $("#account_type").change(function () {
             var account_type = $("#account_type").val();
             if(account_type == 'personal'){
-                alert("personal selected");
+                $("#personal_type").show();
+                $("#business_type").hide();
             } else if(account_type == 'business'){
-                alert('Business selected');
+                $("#business_type").show();
+                $("#personal_type").hide();
             }
         });
         $(document).ready(function () {
+            $("#business_type").hide();
+            $("#personal_type").hide();
             $('#exitAccountSuspended').click(function (e) {
                 e.stopPropagation();
                 $('#inactiveAccountDialog').slideUp();
